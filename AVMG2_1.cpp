@@ -247,7 +247,7 @@ int main()
       int rowIdx = cellIndex[r][c];
       int degree = numNeighbors[r][c];
       deg[rowIdx] = (double)degree;
-      b[rowIdx] = (double)degree; 
+      b[rowIdx] = (double)degree;
 
       for (int d = 0; d < 4; ++d)
       {
@@ -263,7 +263,7 @@ int main()
       }
     }
 
-    double tol = 1e-9; 
+    double tol = 1e-9;
     bool ok = conjugateGradient(varCount, adj, deg, b, x, varCount, tol);
 
     if (!ok)
