@@ -6,6 +6,7 @@ using namespace std;
 
 const double EPS = 1e-12;
 const int MAXN = 2505;
+double A[MAXN][MAXN]; // Matriks augmented (A + kolom b)
 
 // ======================================================
 // Kelas untuk menyelesaikan sistem persamaan linear
@@ -15,7 +16,6 @@ const int MAXN = 2505;
 // ======================================================
 class LinearSystem {
 private:
-  double A[MAXN][MAXN]; // Matriks augmented (A + kolom b)
   int size;             // Ukuran sistem (jumlah variabel)
   
 public:
@@ -66,7 +66,7 @@ public:
         }
       }
 
-      // Kalau kolomnya nol semua → sistem singular (nggak bisa diselesaikan)
+      // Kalau kolomnya nol semua -> sistem singular (nggak bisa diselesaikan)
       if (maxv < EPS) return -1;
 
       // Tukar baris pivot ke posisi saat ini
@@ -103,7 +103,7 @@ public:
 // Kelas Graph
 // ======================================================
 // Representasi peta/grid tempat "T" (start) dan "W" (goal)
-// Di sini, kita mau cari **expected steps** dari T ke W
+// Di sini, kita mau cari expected steps dari T ke W
 // kalau tiap langkah jalan random ke arah yang bisa.
 // ======================================================
 class Graph {
@@ -114,14 +114,14 @@ private:
   int cellCnt;        // Jumlah sel yang bisa dikunjungi
   
   char g[55][55];     // Isi grid
-  int idx[55][55];    // Mapping posisi (i,j) → index variabel
+  int idx[55][55];    // Mapping posisi (i,j) -> index variabel
   int vis[55][55];    // Penanda sudah dikunjungi saat BFS
   int deg[55][55];    // Degree (jumlah arah jalan dari sel ini)
   int cells[MAXN][2]; // List semua sel yang bisa diakses
   
   // Arah gerak (atas, bawah, kiri, kanan)
-  const int di[4] = {-1, 1, 0, 0};
-  const int dj[4] = {0, 0, -1, 1};
+  const int di[4] = {-1, 1,  0, 0};
+  const int dj[4] = { 0, 0, -1, 1};
   
 public:
   Graph(int rows, int cols) : m(rows), n(cols), si(-1), sj(-1), gi(-1), gj(-1), cellCnt(0) {
@@ -285,7 +285,7 @@ int main() {
       continue;
     }
     
-    // Kalau start == goal → langkahnya 0
+    // Kalau start == goal -> langkahnya 0
     if (graph.isStartAtGoal()) {
       printf("0.000000000000\n");
       continue;
@@ -323,4 +323,3 @@ int main() {
 
   return 0;
 }
-

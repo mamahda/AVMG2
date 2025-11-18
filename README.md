@@ -181,7 +181,7 @@ Kita tambahkan kontribusi satu per satu.
 **Contoh:**
 ```cpp
 // Cell punya 3 neighbors di kolom 1, 2, 3
-ls.addCoefficient(0, 1, -1.0);  // A[0][1] += -1
+
 ls.addCoefficient(0, 2, -1.0);  // A[0][2] += -1
 ls.addCoefficient(0, 3, -1.0);  // A[0][3] += -1
 ```
