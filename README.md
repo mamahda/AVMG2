@@ -1,4 +1,4 @@
-# SPOJ VALENMAZ - Solusi Object-Oriented Programming
+# SPOJ VALENTINE MAZE
 
 ## Daftar Isi
 1. [Problem Overview](#problem-overview)
